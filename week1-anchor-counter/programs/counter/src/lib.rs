@@ -1,5 +1,6 @@
 use anchor_lang::prelude::*;
 
+// Remember to change this key for my own
 declare_id!("vAxSkkVFzGbDb2aRyAEC45pD793tYjj7rfGJwMvab3a");
 #[program]
 mod counter {
