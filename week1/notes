@@ -1,0 +1,102 @@
+Programming model in Solana
+
+Accounts
+  function 
+    Store the state (data, from programs to token balance).
+  types  
+    Executable
+      store 
+        user programs
+        native programs
+    Non-Executable
+      store
+        data
+          like context data.
+  Structure
+    Address
+      Public key
+        identifier
+    AccountInfo
+      lamports
+        number of lamports define the account balance.
+      owner
+        program owner
+          it can
+            modify and debit account
+      executable
+        indicates if executable or not
+      data
+        array of account data bytes
+      rent_epoch
+        the next epoch that the account will owe rent
+  other characteristics
+    they only store code, not data
+    they pay rent proportional to the occupied space (10 MB max)
+
+programs
+  account with executable code
+    smart contracts  == programs
+    have no state
+    data is stored in separated data accounts
+  types
+    native
+      system program
+        property of system program until it's seeded
+      BPF Loader
+        non-native programs owner
+  structure        
+    address
+      public key (program ID)
+    AccountInfo
+      data
+      owner: BPF Loader
+      executable: true
+      lamports
+    AccountData
+      program code
+
+Transactions
+  are a
+    set of instructions
+      that
+        interact with various programs in the network
+        processed in order of added
+  have
+    atomicity
+      all instructions must be processed correctly to succeeed
+    max size 
+      of 1232 bytes
+  structure
+    transaction
+      instruction
+        program_id
+        accounts
+          AccountMeta
+            pubkey
+            is_signer
+            is_writable
+          AccountMeta
+            pubkey
+            is_signer
+            is_writable
+        data
+
+instructions
+  logical unit 
+    that
+     execute
+      implementing changes
+  structure
+    program_id
+      address of program to be invoqued
+    accounts
+      accounts list necessary for execution
+    data
+      serialized code about actions to be done
+
+practical class
+  see my first project for basic structure with comments.
+
+
+  
+  
