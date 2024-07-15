@@ -1,6 +1,9 @@
 ## Semana 2
-# Clase #4: Introducción a los Tokens en Solana
+# Clase #3: Configurando el entorno de trabajo
+https://www.youtube.com/watch?v=Dy2OQUnPUEY
 
+# Clase #4: Introducción a los Tokens en Solana
+https://www.youtube.com/watch?v=scsryPugjHk&feature=youtu.be
 Token Program
     Gestiona el token en solana
         Contiene la lógica necesaria para interactuar con tokens
